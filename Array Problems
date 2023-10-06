@@ -26,36 +26,9 @@ int main() {
   return 0;
 }
 
-4.Remove Duplicates in-place from Sorted Array
 
-
-#include<bits/stdc++.h>
-
-using namespace std;
-int removeDuplicates(int arr[], int n)
-{
-  int i = 0;
-  for (int j = 1; j < n; j++) {
-    if (arr[i] != arr[j]) {
-      i++;
-      arr[i] = arr[j];
-    }
-  }
-  return i + 1;
-}
-int main() {
-  int arr[] = {1,1,2,2,2,3,3};
-  int n = sizeof(arr)/sizeof(arr[0]);
-  int k = removeDuplicates(arr, n);
-  cout << "The array after removing duplicate elements is " << endl;
-  for (int i = 0; i < k; i++) {
-    cout << arr[i] << " ";
-  }
-}
 
 2.Find Second Smallest and Second Largest Element in an array
-
-
 
 
 #include<bits/stdc++.h>
@@ -113,6 +86,7 @@ int main() {
     return 0;
 }
 
+
 3.Check if an Array is Sorted
 
 
@@ -136,6 +110,60 @@ int main() {
   printf("%s", isSorted(arr, n) ? "True" : "False");
 
 }
+
+4.Remove Duplicates in-place from Sorted Array
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+int removeDuplicates(int arr[], int n)
+{
+  int i = 0;
+  for (int j = 1; j < n; j++) {
+    if (arr[i] != arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+  return i + 1;
+}
+int main() {
+  int arr[] = {1,1,2,2,2,3,3};
+  int n = sizeof(arr)/sizeof(arr[0]);
+  int k = removeDuplicates(arr, n);
+  cout << "The array after removing duplicate elements is " << endl;
+  for (int i = 0; i < k; i++) {
+    cout << arr[i] << " ";
+  }
+}
+
+
+5.left Rotate the Array by One
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+void solve(int arr[], int n) {
+  int temp = arr[0]; // storing the first element of array in a variable
+  for (int i = 0; i < n - 1; i++) {
+    arr[i] = arr[i + 1];
+  }
+  arr[n - 1] = temp; // assigned the value of variable at the last index
+  for (int i = 0; i < n; i++) {
+    cout << arr[i] << " ";
+  }
+
+}
+int main() {
+  int n=5;
+  
+  int arr[]= {1,2,3,4,5};
+  solve(arr, n);
+}
+
+
 
 
 
